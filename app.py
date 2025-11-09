@@ -1,9 +1,5 @@
 import os
-from dotenv import load_dotenv
 from datetime import datetime
-# Load environment variables from .env file
-load_dotenv()
-# Get the OpenAI API key from environment variables
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Check if the API key is set
