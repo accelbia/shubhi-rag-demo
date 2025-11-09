@@ -10,7 +10,7 @@ else:
 
 import streamlit as st
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
@@ -116,7 +116,7 @@ if video_id:
 
         if question:
             with st.spinner("Fetching answer..."):
-                docs = retriever.get_relevant_documents(question)
+                docs = retriever.invoke(question)
                 context = format_docs(docs)
 
                 # Use the prompt to generate an answer
