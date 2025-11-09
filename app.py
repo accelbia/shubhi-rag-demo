@@ -5,6 +5,8 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Check if the API key is set
 if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY is not set in the environment variables.")
+else:
+    print("OPENAI_API_KEY is set.")
 
 import streamlit as st
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
@@ -19,6 +21,8 @@ import subprocess
 import time
 import json
 import numpy as np
+
+print("All imports successful.")
 
 def get_transcript_text(video_id: str) -> str:
     """
